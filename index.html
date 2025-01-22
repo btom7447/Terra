@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./terra-logo copy.jpg" />
+    <title>Terra Balance Admin</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <link rel="stylesheet" href="styles/tab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="./fetch.js"></script>
+    <script src="./revenueChart.js"></script>
+    <script src="./purchaseChart.js"></script>
+</head>
+<body>
+    <main>
+        <!-- SIDEBAR -->
+        <div class="sidebar side-bar-mobile" id="sidebarMobile">
+            <img src="./assets/images/terra-logo.jpg" alt="Terra Balance Logo"> 
+            <nav>
+                <ul>
+                    <li>Dashboard</li>
+                    <li class="li-link">
+                        <i class="fas fa-chart-pie"></i>
+                        <a href="">Analytics</a>
+                    </li>
+                    <li class="li-link">
+                        <i class="fas fa-home"></i>
+                        <a href="">Overview</a>
+                    </li>
+                    
+                    <li class="li-link">
+                        <i class="fas fa-user"></i>
+                        <a href="">Users</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>Finances</li>
+                    <li class="li-link">
+                        <i class="fas fa-rotate"></i>
+                        <a href="">Refunds</a>
+                    </li>
+                    <li class="li-link">
+                        <i class="fas fa-chart-line"></i>
+                        <a href="">Revenue</a>
+                    </li>
+                    <li class="li-link">                        
+                        <i class="fas fa-money-bill"></i>
+                        <a href="">Transactions</a>
+                    </li>
+                    
+                </ul>
+                
+                <ul>
+                    <li>Applications</li>
+                    <li class="li-link">
+                        <i class="fas fa-calendar"></i>
+                        <a href="">Calendar</a>
+                    </li>
+                    <li class="li-link">
+                        <i class="fas fa-address-book"></i>
+                        <a href="">Contacts</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>Profile</li>
+                    <li class="li-link">
+                        <i class="fas fa-user"></i>
+                        <a href="">Profile</a>
+                    </li>
+                    <li class="li-link">
+                        <i class="fas fa-gears"></i>
+                        <a href="">Profile Settings</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button type="button">
+                <i class="fas fa-sign-out"></i>
+            </button>
+        </div>  
+        <!-- DASHBOARD CONTENT -->
+        <div class="dashboard-content">
+            <header>
+                <h5>Hi <span>Joshua Obasi</span></h5>
+                <div class="header-left">
+                    <!-- NOTIFICATION ICON -->
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <!-- PROFILE CARD -->
+                    <div class="profile-card">
+                        <img src="./assets/images/user-dp.png" alt="users profile picture">
+                    </div>
+                    <!-- HAMBURGER BUTTON -->
+                    <div class="hamburgerMenu" onclick="toggleSidebar()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-sections">
+                <!-- METRICS SECTION -->
+                <sections class="dashboard-metrics">
+                    <!-- PURCHASE METRIC -->
+                    <div class="metric-card">
+                        <div class="metric-card-content">
+                            <div class="metric-card-top">
+                                <h6>Total Purchase</h6>
+                                <span class="percentage">3.1%</span>
+                            </div>
+                            <div class="metric-card-bottom">
+                                <h5>499</h5>
+                                <h6>All purchase this month</h6>
+                            </div>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-money-bill"></i>
+                        </div>
+                    </div>
+                    <!-- REFUND METRIC -->
+                    <div class="metric-card">
+                        <div class="metric-card-content">
+                            <div class="metric-card-top">
+                                <h6>Total Refunds</h6>
+                                <span class="percentage">0.2%</span>
+                            </div>
+                            <div class="metric-card-bottom">
+                                <h5>12</h5>
+                                <h6>All refunds this month</h6>
+                            </div>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-rotate"></i>
+                        </div>
+                    </div>
+                    <!-- REVENUE METRIC -->
+                    <div class="metric-card">
+                        <div class="metric-card-content">
+                            <div class="metric-card-top">
+                                <h6>Total Revenue</h6>
+                                <span class="percentage">14.1%</span>
+                            </div>
+                            <div class="metric-card-bottom">
+                                <h5>500,154</h5>
+                                <h6>Revenue for this month</h6>
+                            </div>
+                        </div>
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </sections>
+                <!-- CHART SECTIONS -->
+                <sections class="chart-section">
+                    <div class="users-list">
+                        <h5>Users Table</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Users</th>
+                                    <th>Status</th>
+                                    <th>Date Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                                       
+                    <div class="charts-list">
+                        <div class="charts">
+                            <div class="charts-top">
+                                <h6>Total Revenue <span class="percentage">14.1%</span></h6>
+                                <h5>500,154</h5>
+                            </div>
+                            <div id="revenueChart"></div>
+                        </div>
+                        <div class="charts">
+                            <div class="charts-top">
+                                <h6>Total Purchase <span class="percentage">3.1%</span></h6>
+                                <h5>499</h5>
+                            </div>
+                            <div id="purchaseChart"></div>
+                        </div>
+                    </div>
+                </sections>
+            </div>
+        </div>
+
+        <!-- MOBILE HAMBURGER TOGGLE -->
+        <script>
+            let isOpen = false;
+        
+            function toggleSidebar() {
+                isOpen = !isOpen;
+                const sidebarMobile = document.getElementById('sidebarMobile');
+                sidebarMobile.classList.toggle('open');
+        
+                // Toggle hamburger animation
+                const bars = document.querySelectorAll('.bar');
+                bars.forEach(bar => {
+                    bar.classList.toggle('change');
+                });
+            }
+        
+            // Add event listener to each element of the mobile sidebar
+            const sidebarElements = document.querySelectorAll('.sidebar > *');
+            sidebarElements.forEach(element => {
+                element.addEventListener('click', () => {
+                    toggleSidebar(); 
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
