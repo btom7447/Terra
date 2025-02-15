@@ -178,6 +178,40 @@
         padding: 20px;
     }
 
+     /* LOGIN  */
+     .login-container {
+        padding: 50px;
+        padding-bottom: 100px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .login-container h1 {
+        font-size: 22px;
+    }
+    .login-container p {
+        font-size: 14px;
+    }
+    .login-container .login-poster {
+        padding-top: 200px;
+        flex: unset;
+    }
+    .login-container .login-poster img {
+        width: 120px;
+    }
+    .login-container .login-form {
+        flex: unset;
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .login-container .login-form input {
+        width: 90%;
+        padding: 10px;
+    }
+    .login-container .login-form button {
+        width: 90%;
+        padding: 10px 20px;
+    }
+
     /* * {
         outline: red solid 1px;
     } */
@@ -246,6 +280,24 @@
         padding: 20px;
     }
 
+    /* LOGIN  */
+    .login-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 50px;
+        padding: 50px;
+    }
+    .login-container h1 {
+        font-size: 22px;
+    }
+    .login-container p {
+        font-size: 14px;
+    }
+    .login-container .login-poster {
+        flex: unset;
+    }
+    
     /* * {
         outline: red solid 1px;
     } */
@@ -265,6 +317,24 @@
         border-collapse: collapse;
         margin-top: 20px;
         overflow-x: scroll;
+    }
+
+    /* LOGIN  */
+    .login-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 50px;
+        padding: 50px;
+    }
+    .login-container h1 {
+        font-size: 24px;
+    }
+    .login-container p {
+        font-size: 16px;
+    }
+    .login-container .login-poster {
+        flex: unset;
     }
 
 }

@@ -29,7 +29,7 @@
         justify-content: flex-start;
         align-items: center;
         gap: 20px;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         left: -250px; 
@@ -117,7 +117,6 @@
         width: 500px;
     }
     
-    
     .dashboard-sections .chart-section .charts-list {
         gap: 20px;
         width: 100%;
@@ -137,7 +136,39 @@
         padding: 20px;
     }
 
-    /* * {
-        outline: red solid 1px;
-    } */
+
+
+    /* LOGIN  */
+    .login-container {
+        padding: 20px;
+        padding-bottom: 100px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .login-container h1 {
+        font-size: 22px;
+    }
+    .login-container p {
+        font-size: 14px;
+    }
+    .login-container .login-poster {
+        padding-top: 200px;
+        flex: unset;
+    }
+    .login-container .login-poster img {
+        width: 120px;
+    }
+    .login-container .login-form {
+        flex: unset;
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .login-container .login-form input {
+        width: 90%;
+        padding: 10px;
+    }
+    .login-container .login-form button {
+        width: 90%;
+        padding: 10px 20px;
+    }
 }

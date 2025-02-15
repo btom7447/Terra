@@ -477,3 +477,101 @@ main .dashboard-content .dashboard-sections {
     color: var(--black);
     text-transform: capitalize;
 }
+
+
+/* LOGIN  */
+.login-container {
+    padding: 100px;
+    width: 100%;
+    height: 100dvh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 100px;
+    background-color: var(--p-blue);
+}
+.login-container h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.login-container p {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    text-align: center;
+}
+.login-container .login-poster {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-container .login-poster img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 50%;
+}
+.login-container .login-form {
+    flex: 1;
+    padding: 70px 50px;
+    border-radius: 20px;
+    background-color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.login-container .login-form h1 {
+    color: var(--p-blue);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-container .login-form input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--p-blue);
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--s-blue);
+}
+.login-container .login-form button {
+    width: 90%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: var(--p-green);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    text-transform: uppercase;
+}
+.login-container .login-form button:hover {
+    background-color: var(--p-blue);
+}
+.login-container .login-form a {
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--p-red);
+}
+
+
+
+/* * {
+    outline: red solid 1px;
+} */
